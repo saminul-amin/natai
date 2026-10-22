@@ -1,0 +1,38 @@
+{
+  "name": "natai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "নাটাই · Natai — kites over Old Dhaka. A browser kite-fighting game set on the rooftops of Puran Dhaka during Shakrain.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run credits && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test --project=smoke",
+    "shots": "playwright test --project=shots",
+    "credits": "node tools/credits-check.mjs",
+    "icons": "node tools/icons.mjs",
+    "models": "node tools/models.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.5.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^24.19.2",
+    "@types/three": "0.186.0",
+    "eslint": "10.13.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

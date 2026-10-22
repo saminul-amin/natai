@@ -1,0 +1,13 @@
+dist
+node_modules
+package-lock.json
+assets
+docs/shots
+test-results
+playwright-report
+
+# The project documents are written by hand; Prettier would rewrite their tables and emphasis.
+DESIGN.md
+README.md
+docs/recording.md
+assets/CREDITS.md
