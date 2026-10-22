@@ -18,7 +18,8 @@
     "shots": "playwright test --project=shots",
     "credits": "node tools/credits-check.mjs",
     "icons": "node tools/icons.mjs",
-    "models": "node tools/models.mjs"
+    "models": "node tools/models.mjs",
+    "deploy": "node tools/deploy.mjs"
   },
   "dependencies": {
     "three": "0.186.1"

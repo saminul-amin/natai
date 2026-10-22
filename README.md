@@ -8,11 +8,11 @@ Status: M0 to M5 implemented; the Bengali voice recordings (`docs/recording.md`)
 
 ## Stack
 
-TypeScript (strict), Three.js WebGPU renderer with TSL and a WebGL 2 fallback, Vite, Vitest, Playwright, ESLint and Prettier, GitHub Actions deploying to GitHub Pages. Custom string and kite physics in a fixed 120 Hz step, deterministic from a seed, rival AI inside that step, Web Audio, PWA with offline support.
+TypeScript (strict), Three.js WebGPU renderer with TSL and a WebGL 2 fallback, Vite, Vitest, Playwright, ESLint and Prettier, GitHub Pages hosting. Custom string and kite physics in a fixed 120 Hz step, deterministic from a seed, rival AI inside that step, Web Audio, PWA with offline support.
 
 ## Running
 
-Needs Node 24 (the version CI uses).
+Needs Node 24.
 
 ```bash
 npm install
@@ -33,6 +33,14 @@ npm run build
 ```
 
 The build checks `assets/CREDITS.md`, typechecks, and writes the static site to `dist/` with the service worker's precache list. `npm run preview` serves it.
+
+Before a deploy, run the checks by hand: `npm run typecheck`, `npm run lint`, `npm test` and `npm run e2e`.
+
+```bash
+npm run deploy
+```
+
+Publishes `dist/` to the `gh-pages` branch, which GitHub Pages serves. There is no CI; the site changes only when this is run.
 
 Other scripts: `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run e2e` (Playwright smoke test on the WebGL 2 path; run `npx playwright install chromium` once), `npm run shots` (the four milestone screenshots into `docs/shots/`, on a machine with a GPU), `npm run icons` (PWA icons and Open Graph image), `npm run models` (glTF-Transform pipeline for `assets/source/`).
 
